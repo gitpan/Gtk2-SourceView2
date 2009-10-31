@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Gtk2::TestHelper tests => 15;
+use Gtk2::TestHelper tests => 17;
 
 use FindBin;
 use lib "$FindBin::Bin";
@@ -51,6 +51,10 @@ sub test_properties {
 	$language = $lm->guess_language("$FindBin::Bin/my_helper.pm", undef);
 	isa_ok($language, 'Gtk2::SourceView2::Language');
 	is($language->get_id, 'perl', "Got perl");
+
+	$language = $lm->guess_language("sample.c");
+	isa_ok($language, 'Gtk2::SourceView2::Language');
+	is($language->get_id, 'c', "Got C");
 
 	$language = $lm->guess_language(undef, 'text/x-c');
 	isa_ok($language, 'Gtk2::SourceView2::Language');

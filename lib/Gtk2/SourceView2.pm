@@ -25,9 +25,16 @@ Gtk2::SourceView2 - Enhanced source code editor widget
 
 =head1 DESCRIPTION
 
-Gtk2::SourceView2 is the Perl binding for the C library gtk2-sourceview2.
+Gtk2::SourceView2 is the Perl binding for the C library gtksourceview-2.0. This
+is the same widget that's used by gedit, MonoDevelop, Anjuta and several other
+projects.
 
-For more information about libunique see:
+This widget extends the standard GTK+ framework for multiline text editing with
+support for configurable syntax highlighting, unlimited undo/redo, UTF-8
+compliant caseless searching, printing and other features typical of a source
+code editor.
+
+For more information about gtksourceview-2.0 see:
 L<http://projects.gnome.org/gtksourceview/>.
 
 =head1 AUTHORS
@@ -50,7 +57,7 @@ use base 'DynaLoader';
 
 use Gtk2;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub dl_load_flags { $^O eq 'darwin' ? 0x00 : 0x01 }
 

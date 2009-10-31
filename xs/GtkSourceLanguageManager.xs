@@ -96,5 +96,5 @@ GtkSourceLanguage_ornull*
 gtk_source_language_manager_get_language (GtkSourceLanguageManager *lm, const gchar *id)
 
 GtkSourceLanguage_ornull*
-gtk_source_language_manager_guess_language (GtkSourceLanguageManager *lm, const gchar_ornull *filename, const gchar_ornull *content_type)
+gtk_source_language_manager_guess_language (GtkSourceLanguageManager *lm, const gchar_ornull *filename, const gchar_ornull *content_type = NULL)
 

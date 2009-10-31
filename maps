@@ -1,5 +1,5 @@
 GTK_TYPE_SOURCE_VIEW                  GtkSourceView               GObject   Gtk2::SourceView2::View
-GTK_TYPE_SOURCE_SEARCH_FLAGS          GtkSourceSearchFlags        GEnum     Gtk2::SourceView2::SearchFlags
+GTK_TYPE_SOURCE_SEARCH_FLAGS          GtkSourceSearchFlags        GFlags    Gtk2::SourceView2::SearchFlags
 GTK_TYPE_SOURCE_SMART_HOME_END_TYPE   GtkSourceSmartHomeEndType   GEnum     Gtk2::SourceView2::SmartHomeEndType
 GTK_TYPE_SOURCE_DRAW_SPACES_FLAGS     GtkSourceDrawSpacesFlags    GFlags    Gtk2::SourceView2::DrawSpacesFlags
 GTK_TYPE_SOURCE_BUFFER                GtkSourceBuffer             GObject   Gtk2::SourceView2::Buffer

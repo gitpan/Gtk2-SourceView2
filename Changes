@@ -1,0 +1,10 @@
+Revision history for Gtk2::SourceView2.
+
+0.02 Sat Oct 31 09:22:17 CET 2009
+	Add the bindings for Gtk2::SourceView2::Iter.
+	LanguageManager->guess_language() last argument is optional.
+	Fix a typo in the module's documentation.
+
+
+0.01 Thu Oct 29 21:33:41 CET 2009
+	First release.
