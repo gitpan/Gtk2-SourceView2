@@ -27,7 +27,6 @@ sub test_constructors {
 	my $view = Gtk2::SourceView2::View->new();
 	isa_ok($view, 'Gtk2::SourceView2::View');
 
-	#TODO test the constructor with a buffer
 	my $buffer = Gtk2::SourceView2::Buffer->new(undef);
 	$view = Gtk2::SourceView2::View->new_with_buffer($buffer);
 	isa_ok($view, 'Gtk2::SourceView2::View');
