@@ -72,7 +72,7 @@ sub build_gui {
 	#
 	# Fix Gtk2::TextView's annoying paste behaviour when pasting with the mouse
 	# (middle button click). By default gtk will scroll the text view to the
-	# original place where the cursor is
+	# original place where the cursor is.
 	#
 	$sourceview->signal_connect(button_press_event => sub {
 		my ($view, $event) = @_;
@@ -90,11 +90,11 @@ sub build_gui {
 
 
 	#
-	# IF a paste is done through the middle click then place the cursor at the end
+	# If a paste is done through the middle click then place the cursor at the end
 	# of the pasted text.
 	#
 	$buffer->signal_connect('paste-done' => sub {
-		my $mark = delete $self->{paste_mark};
+		my $mark = delete $self->{paste_mark} or return;
 
 		my $iter = $buffer->get_iter_at_mark($mark);
 		$buffer->place_cursor($iter);
