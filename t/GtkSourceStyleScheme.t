@@ -27,8 +27,8 @@ sub test_properties {
 	isa_ok($scheme, 'Gtk2::SourceView2::StyleScheme');
 
 	is($scheme->get_id, 'classic', "get_id");
-	is($scheme->get_name, 'Classic', "get_name");
-	is($scheme->get_description, 'Classic color scheme', "get_description");
+	ok($scheme->get_name, "get_name");
+	ok($scheme->get_description, "get_description");
 	ok($scheme->get_filename =~ m(/classic\.xml), "get_filename");
 	is_deeply(
 		[ $scheme->get_authors ],

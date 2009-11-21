@@ -1,5 +1,8 @@
 Revision history for Gtk2::SourceView2.
 
+0.05 Sat Nov 21 08:56:04 CET 2009
+	Issue 1 - test failure non-English locale
+
 0.04 Sat Nov 14 19:42:51 CET 2009
 	Fix a warning in the examples when pasting text with the keyboard.
 
