@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Gtk2-SourceView2
-version:             0.05
+version:             0.06
 abstract:            Enhanced source code editor widget 
 license:             perl, lgpl
 author:              

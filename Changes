@@ -1,5 +1,8 @@
 Revision history for Gtk2::SourceView2.
 
+0.06 Fri Jan 29 12:56:44 CET 2010
+	Issue 1 - test failure non-English locale (reopen)
+
 0.05 Sat Nov 21 08:56:04 CET 2009
 	Issue 1 - test failure non-English locale
 

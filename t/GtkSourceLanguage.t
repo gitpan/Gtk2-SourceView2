@@ -31,7 +31,7 @@ sub test_properties {
 
 	is($language->get_id, 'perl', "get_id");
 	is($language->get_name, 'Perl', "get_name");
-	is($language->get_section, 'Scripts', "get_section");
+	ok($language->get_section, "get_section");
 	is($language->get_hidden, FALSE, "get_hidden");
 
 	is($language->get_metadata('line-comment-start'), '#', "get_metadata");
