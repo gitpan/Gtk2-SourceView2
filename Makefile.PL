@@ -76,6 +76,14 @@ sub main {
 		PREREQ_PM     => {
 			'Gtk2' => '1.160',
 		},
+
+		CONFIGURE_REQUIRES => {
+			'Gtk2::CodeGen'       => 0,
+			'Glib::MakeHelper'    => 0,
+			'ExtUtils::Depends'   => 0,
+			'ExtUtils::PkgConfig' => 0,
+		},
+
 		PREREQ_FATAL  => 1,
 		
 		XSPROTOARG    => '-noprototypes',
