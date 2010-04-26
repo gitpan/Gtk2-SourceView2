@@ -1,5 +1,10 @@
 Revision history for Gtk2::SourceView2.
 
+
+0.08 Mon Apr 26 22:11:27 CEST 2010
+	License change to GPL2 and Artistic.
+	Remove the dependency to File::Slurp in the example.
+
 0.07 Fri Mar 19 21:12:08 CET 2010
 	Issue 2 - configure requires missing test failure.
 

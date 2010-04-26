@@ -6,7 +6,6 @@ use warnings;
 use Glib qw(TRUE FALSE);
 use Gtk2 '-init';
 use Gtk2::SourceView2;
-use File::Slurp;
 use Data::Dumper;
 
 use base 'Class::Accessor::Fast';
@@ -203,7 +202,13 @@ sub load_file {
 	$self->detect_language($filename);
 
 	# Loading a file should not be undoable.
-	my $content = read_file($filename);
+	my $content;
+	do {
+		open my $handle, $filename or die "Can't read file $filename because $!";
+		local $/;
+		$content = <$handle>;
+		close $handle;
+	};
 	$buffer->begin_not_undoable_action();
 	$buffer->set_text($content);
 	$buffer->end_not_undoable_action();

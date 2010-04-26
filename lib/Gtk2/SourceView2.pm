@@ -43,11 +43,23 @@ Emmanuel Rodriguez E<lt>potyl@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Emmanuel Rodriguez.
+Copyright (c) 2009-2010 by Emmanuel Rodriguez (see the file AUTHORS)
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version; or the
+Artistic License, version 2.0.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details; or the Artistic License.
+
+You should have received a copy of the GNU Library General Public
+License along with this library; if not, write to the
+Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+Boston, MA 02111-1307 USA.
 
 =cut
 
@@ -57,7 +69,7 @@ use base 'DynaLoader';
 
 use Gtk2;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 sub dl_load_flags { $^O eq 'darwin' ? 0x00 : 0x01 }
 
