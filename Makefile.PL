@@ -71,7 +71,7 @@ sub main {
 		NAME          => 'Gtk2::SourceView2',
 		VERSION_FROM  => File::Spec->catfile('lib', 'Gtk2', 'SourceView2.pm'),
 		ABSTRACT_FROM => File::Spec->catfile('lib', 'Gtk2', 'SourceView2.pm'),
-		LICENSE       => 'perl, lgpl',
+		LICENSE       => 'perl, gpl',
 
 		PREREQ_PM     => {
 			'Gtk2' => '1.160',

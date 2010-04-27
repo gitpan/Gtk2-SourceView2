@@ -69,7 +69,7 @@ use base 'DynaLoader';
 
 use Gtk2;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 sub dl_load_flags { $^O eq 'darwin' ? 0x00 : 0x01 }
 

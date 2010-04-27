@@ -1,5 +1,7 @@
 Revision history for Gtk2::SourceView2.
 
+0.09 Tue Apr 27 20:11:56 CEST 2010
+	Fix the license in Makefile.PL.
 
 0.08 Mon Apr 26 22:11:27 CEST 2010
 	License change to GPL2 and Artistic.
