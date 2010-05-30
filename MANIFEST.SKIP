@@ -7,3 +7,4 @@
 ^[.]git
 ^SourceView2[.]bs$
 ^Gtk2-SourceView2-.+\.tar\.gz$
+^perl-Gtk2-SourceView2[.]doap$

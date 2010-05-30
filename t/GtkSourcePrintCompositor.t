@@ -29,9 +29,11 @@ sub test_constructors {
 	);
 	isa_ok($print, 'Gtk2::SourceView2::PrintCompositor');
 
-	$print = Gtk2::SourceView2::PrintCompositor->new_from_view(
-		Gtk2::SourceView2::View->new()
-	);
+	my $window = Gtk2::Window->new();
+	my $view = Gtk2::SourceView2::View->new();
+	$window->add($view);
+
+	$print = Gtk2::SourceView2::PrintCompositor->new_from_view($view);
 	isa_ok($print, 'Gtk2::SourceView2::PrintCompositor');
 }
 

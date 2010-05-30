@@ -24,17 +24,22 @@ sub tests {
 
 
 sub test_constructors {
+	my $parent = Gtk2::HBox->new();
 	my $view = Gtk2::SourceView2::View->new();
+	$parent->add($view);
 	isa_ok($view, 'Gtk2::SourceView2::View');
 
 	my $buffer = Gtk2::SourceView2::Buffer->new(undef);
 	$view = Gtk2::SourceView2::View->new_with_buffer($buffer);
+	$parent->add($view);
 	isa_ok($view, 'Gtk2::SourceView2::View');
 }
 
 
 sub test_properties {
+	my $parent = Gtk2::HBox->new();
 	my $view = Gtk2::SourceView2::View->new();
+	$parent->add($view);
 
 	is_int_ok($view, 'tab_width', 4, 6);
 	is_int_ok($view, 'indent_width', 4, 6);
@@ -53,7 +58,8 @@ sub test_properties {
 
 	# Draw spaces
 	$view->set_draw_spaces(['space', 'tab']);
-	is($view->get_draw_spaces, '[ space tab ]', "draw_spaces");
+	# Test::Simple 0.95 no longer stringifies its arguments before comparing
+	is('' . $view->get_draw_spaces, '[ space tab ]', "draw_spaces");
 
 
 	# Mark category (pixbuf, priority, background)

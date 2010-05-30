@@ -45,53 +45,29 @@ creating it.
 =cut
 void
 gtk_source_language_manager_set_search_path (GtkSourceLanguageManager *lm, ...)
-	PREINIT:
-		gchar **dirs = NULL;
-		size_t count = 0;
-		size_t i     = 0;
-
 	CODE:
-		count = items - 1;
-		if (count > 0) {
-			if (count == 1 && !SvOK(ST(1))) {
-				/* Reset the values to the original list */
-				dirs = NULL;
-			}
-			else {
-				dirs = g_new0 (gchar *, items);
-				for (i = 0; i < count; ++i) {
-					dirs[i] = SvGChar(ST(i + 1));
-				}
-			}
-		}
-		else {
-			/* Clear the current list */
-			dirs = g_new0 (gchar *, 1);
-			dirs[1] = NULL;
-		}
-
-		gtk_source_language_manager_set_search_path(lm, dirs);
-		g_free(dirs);
+		sourceview2perl_generic_set_dirs(
+			gtk_source_language_manager_set_search_path,
+			lm
+		);
 
 
 void
 gtk_source_language_manager_get_search_path (GtkSourceLanguageManager *lm)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = (gchar **)gtk_source_language_manager_get_search_path(lm);
-		sourceview2perl_return_strv(list);
+		sourceview2perl_return_strv(
+			gtk_source_language_manager_get_search_path(lm),
+			FALSE
+		);
 
 
 void
 gtk_source_language_manager_get_language_ids (GtkSourceLanguageManager *lm)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = (gchar **) gtk_source_language_manager_get_language_ids(lm);
-		sourceview2perl_return_strv(list);
+		sourceview2perl_return_strv(
+			gtk_source_language_manager_get_language_ids(lm),
+			FALSE
+		);
 
 
 GtkSourceLanguage_ornull*
@@ -99,4 +75,3 @@ gtk_source_language_manager_get_language (GtkSourceLanguageManager *lm, const gc
 
 GtkSourceLanguage_ornull*
 gtk_source_language_manager_guess_language (GtkSourceLanguageManager *lm, const gchar_ornull *filename, const gchar_ornull *content_type = NULL)
-

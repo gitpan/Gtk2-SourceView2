@@ -44,30 +44,24 @@ gtk_source_language_get_style_name (GtkSourceLanguage *language, const char *sty
 
 void
 gtk_source_language_get_mime_types (GtkSourceLanguage *language)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = gtk_source_language_get_mime_types(language);
-		sourceview2perl_return_strv(list);
-		g_strfreev(list);
+		sourceview2perl_return_strv(
+			gtk_source_language_get_mime_types(language),
+			TRUE
+		);
 
 void
 gtk_source_language_get_globs (GtkSourceLanguage *language)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = gtk_source_language_get_globs(language);
-		sourceview2perl_return_strv(list);
-		g_strfreev(list);
+		sourceview2perl_return_strv(
+			gtk_source_language_get_globs(language),
+			TRUE
+		);
 
 void
 gtk_source_language_get_style_ids (GtkSourceLanguage *language)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = gtk_source_language_get_style_ids(language);
-		sourceview2perl_return_strv(list);
-		g_strfreev(list);
+		sourceview2perl_return_strv(
+			gtk_source_language_get_style_ids(language),
+			TRUE
+		);

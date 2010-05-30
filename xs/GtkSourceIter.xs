@@ -35,12 +35,14 @@ void
 gtk_source_iter_forward_search (class, const GtkTextIter *iter, const gchar *str, GtkSourceSearchFlags flags)
 	ALIAS:
 		backward_search = 1
+
 	PREINIT:
 		GtkTextIter match_start;
 		GtkTextIter match_end;
 		gboolean found = FALSE;
 		gboolean (*searchfunc) (const GtkTextIter *iter, const gchar *str, GtkSourceSearchFlags flags, GtkTextIter *match_start, GtkTextIter *match_end, const GtkTextIter *limit);
-GtkTextIter *limit = NULL;
+		GtkTextIter *limit = NULL;
+
 	PPCODE:
 		
 		searchfunc = (ix == 0 ? gtk_source_iter_forward_search : gtk_source_iter_backward_search);

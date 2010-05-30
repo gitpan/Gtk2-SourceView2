@@ -39,9 +39,8 @@ gtk_source_style_scheme_get_style (GtkSourceStyleScheme *style, const gchar *sty
 
 void
 gtk_source_style_scheme_get_authors (GtkSourceStyleScheme *style)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = (gchar **) gtk_source_style_scheme_get_authors(style);
-		sourceview2perl_return_strv(list);
+		sourceview2perl_return_strv(
+			gtk_source_style_scheme_get_authors(style),
+			FALSE
+		);

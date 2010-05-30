@@ -40,33 +40,11 @@ passed then the search path is reset to default.
 =cut
 void
 gtk_source_style_scheme_manager_set_search_path (GtkSourceStyleSchemeManager *manager, ...)
-	PREINIT:
-		gchar **dirs = NULL;
-		size_t count = 0;
-		size_t i     = 0;
-
 	CODE:
-		count = items - 1;
-		if (count > 0) {
-			if (count == 1 && !SvOK(ST(1))) {
-				/* Reset the values to the original list */
-				dirs = NULL;
-			}
-			else {
-				dirs = g_new0 (gchar *, items);
-				for (i = 0; i < count; ++i) {
-					dirs[i] = SvGChar(ST(i + 1));
-				}
-			}
-		}
-		else {
-			/* Clear the current list */
-			dirs = g_new0 (gchar *, 1);
-			dirs[1] = NULL;
-		}
-
-		gtk_source_style_scheme_manager_set_search_path(manager, dirs);
-		g_free(dirs);
+		sourceview2perl_generic_set_dirs(
+			gtk_source_style_scheme_manager_set_search_path,
+			manager
+		);
 
 
 void
@@ -84,19 +62,17 @@ gtk_source_style_scheme_manager_get_scheme (GtkSourceStyleSchemeManager *manager
 
 void
 gtk_source_style_scheme_manager_get_search_path (GtkSourceStyleSchemeManager *manager)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = (gchar **)gtk_source_style_scheme_manager_get_search_path(manager);
-		sourceview2perl_return_strv(list);
+		sourceview2perl_return_strv(
+			gtk_source_style_scheme_manager_get_search_path(manager),
+			FALSE
+		);
 
 
 void
 gtk_source_style_scheme_manager_get_scheme_ids (GtkSourceStyleSchemeManager *manager)
-	PREINIT:
-		gchar **list = NULL;
-
 	PPCODE:
-		list = (gchar **)gtk_source_style_scheme_manager_get_scheme_ids(manager);
-		sourceview2perl_return_strv(list);
+		sourceview2perl_return_strv(
+			gtk_source_style_scheme_manager_get_scheme_ids(manager),
+			FALSE
+		);
